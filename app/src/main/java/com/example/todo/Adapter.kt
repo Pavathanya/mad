@@ -22,6 +22,9 @@ class Adapter(var data: List<CardInfo>) : RecyclerView.Adapter<Adapter.viewHolde
         return viewHolder(itemView)
     }
 
+    val dateFormat = SimpleDateFormat("dd-MMM-yyyy HH:mm:ss a", Locale.getDefault())
+
+
     override fun onBindViewHolder(holder: viewHolder, position: Int) {
         when (data[position].priority.toLowerCase()) {
             "high" -> holder.layout.setBackgroundColor(Color.parseColor("#F05454"))
